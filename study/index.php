@@ -54,6 +54,14 @@
     <li><a href="internet_forum5.php">掲示板の完成版</a></li>
 </ol>
 
+<p>PHP復習2周目</p>
 
+<ol>
+    <li><a href="test.php">include_pathの確認</a></li>
+    <li><a href="basic.php">PHPプログラムの基本事項</a></li>
+    <li><a href="./callable.php">コールバック関数</a></li>
+    <li><a href="./string2.php">文字列</a></li>
+    <li><a href="./practice1.php">[練習]数値～</a></li>
+</ol>
 </body>
 </html>
