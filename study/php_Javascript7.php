@@ -10,21 +10,49 @@
 <body>
     <?php
 
-    $lang = 'Jp';
+    $num = 0;
 
-    $msg = $lang === 'Jp' ? 'こんにちは' : 'Hello';
-    print $msg;
+    while ($num <= 5) {
+        print 'num = ' . $num . '<br />';
+        $num_ = 0;
+
+        while ($num_ <= 10) {
+            print '&nbsp;&nbsp;&nbsp;num = ' . $num_ . '<br />';
+            $num_++;
+            if ($num_ === 3) {
+                break 2;
+            }
+        }
+        $num++;
+    }
 
     ?>
 </body>
 <!-- <script src="script.js"></script> -->
 <script>
+    let num = 0;
 
-    let lang = 'Jp';
+    while (num <= 5) {
+        console.log('num = ' + num);
+        let num_ = 0;
+        labelA:
 
-    let msg = lang === 'Jp' ? 'こんにちは' : 'Hello';
-    console.log(msg);
+        while (num_ <= 2) {
+            console.log(' num_ = ' + num_);
+            let num_2 = 0;
 
+            while (num_2 <= 5) {
+                console.log('   num_2 = ' + num_2);
+                num_2++;
+                if (num_2 === 2) {
+                    break labelA;
+                    // break;
+                }
+            }
+            num_++;
+        }
+        num++;
+    }
 </script>
 
 </html>
