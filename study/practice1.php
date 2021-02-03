@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>練習2周目。</title>
 </head>
+
 <body>
     <?php
     /*echo 250   , "<br />"; //整数
@@ -269,13 +271,221 @@ print 'end';
 
 for ($num=0; $num < 5; $num++) {
     print 'num='.$num.'<br />';
-}*/
+}
 for ($i=0, $j=3; $i < 3; $i++,$j--) {
     print '$i='.$i.','.'$j='.$j.'<br />';
-
 }
+$preflist = array('東京', '大阪', '福岡');
+foreach($preflist as $pref) {
+    print $pref.'<br />';
+}
+
+// $array = ["りんご", "れもん", "もも"];
+$array = array("apple"=>"りんご", "れもん", "もも");
+foreach($array as $key=>$val) {
+    print $key.$val;
+}
+print_r($array);
+print $array[1];
+
+$preflist = array('Tokyo' => '東京', 'Osaka' => '大阪', 'Fukuoka' => '福岡');
+foreach($preflist as $key => $value) {
+    print $key.'=>'.$value.'<br />';
+}
+
+$slime = array('スライム', 'スライムベス', 'スライムスノー');
+foreach($slime as $key => &$value)
+{
+    $value .= 'でぇす！';
+    print '['.$key.']'.$value.'<br>';
+}
+unset($value);
+$value = '変更';
+
+
+$pricelist = array(80, 100, 120);
+
+foreach($pricelist as $key => &$value) {
+    $value *= 1.10;
+}
+unset($value);
+
+$value = 999;
+print_r($pricelist);
+
+$result[0] = 85;
+$result[1] = 92;
+$result[2] = 68;
+
+foreach($result as $value) {
+    print $value.'<br />';
+}
+// print count($result);
+for ($i=0; $i < count($result); $i++) {
+    print $result[$i].'<br />';
+    // print $i;
+}
+
+$result['english'] = 72;
+$result['math'] = 82;
+
+foreach($result as $key => $value) {
+    print $key.' : '.$value.'<br />';
+}
+
+$name[1] = '山田';
+$name[10] = '高橋';
+
+foreach($name as $value) {
+    print $value.'<br />';
+}
+print_r($name);
+
+$var[0] = 14;
+$var[2] = 'Tokyo';
+$var[-4] = 8400;
+
+$var['yamada'] = 86;
+$var['endou'] = 75;
+$var['aichi'] = 'nagoya';
+
+$var['8'] = 65;  //キーは整数
+$var[8] = 75;    //キーは整数
+$var['08'] = 85; //キーは文字列
+
+foreach($var as $key => $val) {
+    print '[キー]:'.$key.'[値]:'.$val.'[型]:'.gettype($val).'<br />';
+}
+
+$key = 'peach';
+$var[$key] = 120;
+
+//変数を展開し、キーを指定
+$key = 'peach';
+$var["price_$key"] = 120;
+
+//定数でキーを指定
+define("INDEX_KEY", 8);
+$var[INDEX_KEY] = 120;
+
+foreach($var as $key => $val) {
+    print '[キー]:'.$key.'&nbsp;&nbsp;[値]:'.$val.'&nbsp;&nbsp;[値の型]:'.gettype($val).'<br />';
+}
+print_r($var);
+
+$key = 'peach';
+$var["price_$key"] = 120;
+
+define("ORANGE", 'price_orange');
+$var[ORANGE] = 120;
+
+print_r($var);
+
+$var[6] = 100;
+$var[] = 'Tokyo';
+$var[5] = 'Fukuoka';
+
+for ($i=10; $i < 13; $i++) {
+    $var[] = $i * 100;
+}
+
+print_r($var);
+
+$var[12] = 100;
+$var['Kudou'] = 72;
+$var[7] = 100;
+//最大のキーは12なので、キーが省略された場合には13が付与される。
+$var[] = 'Tokyo';
+
+print_r($var);
+
+$var[-3] = 75;
+$var[-12] = 45;
+$var[] = 28;
+$var[] = 83;
+
+print_r($var);
+
+hello('Hello', 3);
+
+function hello($hello, ...$args) {
+    for ($i=0; $i < $args; $i++) {
+        print $hello;
+    }
+}
+
+    function f($req, $opt = null, ...$params)
+    {
+        // $params は配列で、残りのすべての引数が含まれる
+        printf('$req: %d; $opt: %d; パラメータ数: %d; パラメータ: ', $req, $opt, count($params));
+        if ($params) {
+            $i = 0;
+            while ($i < count($params)) {
+                print $params[$i].'&nbsp;';
+                $i++;
+            }
+        } else {
+            print '無し';
+        }
+        print '<br>';
+    }
+
+    f(1);
+    f(1, 2);
+    f(1, 2, 3);
+    f(1, 2, 3, 4);
+    f(1, 2, 3, 4, 5);
+    f(1, 2, 3, 4, 5, 6);
+    
+    $var = array('Tokyo'=>'東京','Osaka'=>'大阪','Fukuoka'=>'福岡');
+
+    print_r($var);
+    
+    $var = array(10 => '遠藤', '斎藤', '伊藤');
+    
+    print_r($var);
+
+    $var[0] = 'Tanaka';
+    $var[1] = 'Yamada';
+    print_r($var);
+    
+    $var = array('Yamada' => 82,
+             'Endou' => 76,
+             'Takahashi' => 64
+);
+$var['Yoshida'] = 91;
+
+print_r($var);
+$result = array_search(91, $var);
+print($result);
+*/
+
+//多次元配列の確認から。
+$maker = array('富士通', 'NEC', 'Sony', 'Sharp');
+$type = array('Note', 'Desktop');
+
+$pc = array($maker, $type);
+print_r($pc);
+print '<br />';
+
+// print count($pc[1]);
+$pc[2][0] = 'スマホ';
+
+for ($j=0; $j < count($pc); $j++) { 
+    for ($i=0; $i < count($pc[$j]); $i++) { 
+        print $pc[$j][$i].' ';
+    }
+    print '<br>';
+}
+
+
+
+
+//値の取得
+// print '$pc[0][1]='.$pc[0][1].'<br />';
+// print '$pc[1][0]='.$pc[1][0];
     ?>
 
-
 </body>
+
 </html>

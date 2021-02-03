@@ -62,6 +62,11 @@
     <li><a href="./callable.php">コールバック関数</a></li>
     <li><a href="./string2.php">文字列</a></li>
     <li><a href="./practice1.php">[練習]数値～</a></li>
+    <li><a href="./php_Javascript1.php">PHPとJavaScript1</a></li>
+    <li><a href="./php_Javascript2.php">PHPとJavaScript2</a></li>
+    <li><a href="./php_Javascript3.php">PHPとJavaScript3</a></li>
+    <li><a href="./php_Javascript4.php">PHPとJavaScript4</a></li>
+    <li><a href="./php_Javascript5.php">PHPとJavaScript5</a></li>
 </ol>
 </body>
 </html>
