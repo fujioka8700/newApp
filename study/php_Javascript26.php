@@ -18,7 +18,7 @@
     {
         public $channelNo;
 
-        public function dispChannel()
+        function dispChannel()
         {
             //クラス内でメンバ変数にアクセスするには、"this"を使う。
             print('現在のチャンネルは' . $this->channelNo);
@@ -32,29 +32,23 @@
     class Television {
         constructor() {
             this.channelNo;
+            this.dispChannel = function() { //最優先
+                console.log('[コンストラクタ]現在のチャンネルは' + this.channelNo);
+            }
         }
 
-        _dispChannel()
-        {
+        dispChannel() { //3番目
             console.log('現在のチャンネルは' + this.channelNo);
         }
+    }
+
+    Television.prototype.dispChannel = function() { //2番目
+        console.log('[プロトタイプ]現在のチャンネルは' + this.channelNo);
     }
 
     let tv = new Television();
     tv.channelNo = 8;
-    tv._dispChannel();
-
-    function Television2() {
-        this.channelNo;
-
-        this._dispChannel = function() {
-            console.log('現在のチャンネルは' + this.channelNo);
-        }
-    }
-
-    let tv2 = new Television2();
-    tv2.channelNo = 10;
-    tv2._dispChannel();
+    tv.dispChannel();
 </script>
 
 </html>
