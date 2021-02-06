@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>データの更新(UPDATE)</title>
+    <title>データの削除(DELETE)</title>
 </head>
 <body>
 
-<h1>データの更新(UPDATE)</h1>
+<h1>データの削除(DELETE)</h1>
 
 <?php
 
@@ -24,16 +24,17 @@ function getData(mysqli $link) : mixed {
 
 //結果の行を連想配列で取得し、表示する
 function getRow(mixed $result) : void {
+    print('<p>');
     while ($row = mysqli_fetch_assoc($result)) {
-        // print('<>');
         print('id='.$row['id']);
         print(', name='.$row['name']);
         print('<br>');
     }
+    print('</p>');
 }
 
 //数値以外をクオートする
-function quote_smart(mixed $link, string $value) {
+function quote_smart(mixed $link, string $value) : string {
     if(!is_numeric($value)) {
         //現在の接続の文字セット。特殊文字をエスケープし、mysqli_queryで安全に利用できる形式に変換。
         $value = "'".mysqli_real_escape_string($link, $value)."'";
@@ -41,7 +42,7 @@ function quote_smart(mixed $link, string $value) {
     return $value;
 }
 
-//MySQLサーバーへの接続する
+//MySQLサーバーへ接続する
 $link = mysqli_connect('localhost', 'testuser', 'XWSJ8sATvyCui2KT');
 
 if (!$link) {
@@ -68,25 +69,24 @@ $result = getData($link);
 //データの表示
 getRow($result);
 
-print('<p>データを追加します。</p>');
+print('<p>データを削除します。</p>');
 
-$id = 4;
-// $old_name = "パソコン";
-$name = "スキャナ";
+$id = 0;
+// $name = 'テレビ';
 
-//データの更新
-$sql = sprintf("UPDATE shouhin SET name = %s WHERE id = %s", quote_smart($link, $name), quote_smart($link, $id));
+//データの削除
+$sql = sprintf("DELETE FROM shouhin WHERE id = %s", quote_smart($link, $id));
+// $sql = sprintf("DELETE FROM shouhin WHERE name = %s", quote_smart($link, $name));
 
 // print('<p>エスケープ後のデータ：'.quote_smart($link, $id).'</p>');
-print('<p>エスケープ後のデータ：'.quote_smart($link, $name).'</p>');
 
-//データベース上でクエリを実行する(データの更新)
+//データベース上でクエリを実行する(データの削除)
 $result_flag = mysqli_query($link, $sql);
 if (!$result_flag) {
-    print('<p>UPDATEクエリーが失敗しました。</p>');
+    print('<p>DELETEクエリーが失敗しました。</p>');
 }
 
-print('<p>更新後のデータを取得します。</p>');
+print('<p>削除後のデータを取得します。</p>');
 
 //データの取得
 $result = getData($link);
