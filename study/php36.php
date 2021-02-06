@@ -29,9 +29,7 @@
         print $_COOKIE['PHPSESSID'].'<br>';
     }
 ?>
-<?php
-print $_COOKIE['PHPSESSID'].'<br>';
-?>
+
 <a href="./index.php">ホームへ。</a>
 
 </body>

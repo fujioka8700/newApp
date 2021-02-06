@@ -68,6 +68,7 @@
     <li><a href="./php_Javascript4.php">PHPとJavaScript4</a></li>
     <li><a href="./php_Javascript5.php">PHPとJavaScript5</a></li>
     <li><a href="./php34.php">セッション変数の削除とセッションIDの削除</a></li>
+    <li><a href="./mysql40.php">MySQLへの接続</a></li>
 </ol>
 </body>
 </html>

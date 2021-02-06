@@ -1,5 +1,5 @@
 <?php
-    // session_name('phpsession666');
+session_name('phpsession');
     session_start();
 ?>
 
@@ -18,6 +18,15 @@
     print 'セッション名:'.session_name().'<br>';
     print 'セッションID:'.session_id().'<br>';
     print_r($_COOKIE);
+    $_COOKIE[session_name()];
+
+    print('セッションIDの表示します。<br>');
+    if (!isset($_COOKIE[session_name()])) {
+        print('セッションは登録されていません。<br>');
+    } else {
+
+        print $_COOKIE[session_name()].'<br>';
+    }
 ?>
 
 <br>
