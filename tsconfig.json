@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["resources/js/*"],
+      "ziggy-js": ["./vendor/tightenco/ziggy"]
+    },
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "types": ["vite/client", "vitest/globals"],
+    "outDir": "./.build"
+  },
+  "include": ["resources/js/**/*"],
+  "exclude": ["node_modules", "public", "resources/**/__tests__/*", ".build"]
+}
