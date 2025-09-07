@@ -13,7 +13,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "test": "cowsay",
+    "test": "echo \"Write test here.\" && exit 0",
     "test:dev": "vitest",
     "test:prd": "vitest run",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
